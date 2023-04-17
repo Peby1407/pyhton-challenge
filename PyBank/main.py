@@ -1,7 +1,8 @@
 # Creating PyBank code
-#Falta transformar archivo a text y print in the terminal repository
 #importing module os and csv
-import os, csv
+#couldn't use module path, had to place csv document in the same folder
+import csv
+#Creating a text file to print results
 with open("text_file.txt", "a") as f:
     #csvpath = os.path.join("Resources","budget_data.csv") 
     #opening file
