@@ -32,9 +32,9 @@ with open("text_file.txt", "a") as f:
     print("--------------------------------", file=f)
     print("Total Votes: " , total_votes, file=f)
     print("--------------------------------", file=f)
-    print("Charles Casper Stockham:",percent_Charles, "% ($", votes_Charles,")", file=f)
-    print("Diana DeGette: " ,percent_DeGette, "% ($", votes_DeGette,")", file=f)
-    print("Raymon Anthony Doane: " , percent_Raymond, "% ($", votes_Raymond,")", file=f)
+    print("Charles Casper Stockham:",percent_Charles, "% (", votes_Charles,")", file=f)
+    print("Diana DeGette: " ,percent_DeGette, "% (", votes_DeGette,")", file=f)
+    print("Raymon Anthony Doane: " , percent_Raymond, "% (", votes_Raymond,")", file=f)
     print("--------------------------------", file=f)
     print("--------------------------------", file=f)
     #Creating list for results, to pick the highest amount of votes
