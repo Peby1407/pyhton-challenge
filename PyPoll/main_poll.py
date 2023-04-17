@@ -1,8 +1,9 @@
-#falta hacer camino cvspath y convertir en texto
 #Creating PyPoll code
+#couldn't use module os to follow path file, had to input csv file in the same folder.
 #importing module os and csv
-
+#import os
 import csv
+#creating text file to print results
 with open("text_file.txt", "a") as f:
     #csvpath = os.path.join('Resources','election_data.csv')
     #opening file
