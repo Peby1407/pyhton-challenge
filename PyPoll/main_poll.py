@@ -1,13 +1,13 @@
 #Creating PyPoll code
-#couldn't use module os to follow path file, had to input csv file in the same folder.
 #importing module os and csv
-#import os
+import os
 import csv
-#creating text file to print results
-with open("text_file.txt", "a") as f:
-    #csvpath = os.path.join('Resources','election_data.csv')
+txtpath = os.path.join("PyPoll","Analysis","text_file.txt")
+#Creating a text file to print results
+with open(txtpath, "a") as f:
+    csv_path = os.path.join("PyPoll","Resources","election_data.csv")
     #opening file
-    with open('election_data.csv', encoding='UTF-8') as csvfile:
+    with open(csv_path, encoding='UTF-8') as csvfile:
         csvreader=csv.reader(csvfile,delimiter=',')
         #skipping first row
         next(csvfile)
@@ -21,30 +21,34 @@ with open("text_file.txt", "a") as f:
             #Creating votes list divided by each candidate
             votes_per_candidate.append(percandidate)
             #counting votes per candidate
-            votes_Charles = votes_per_candidate.count('Charles Casper Stockham')
-            votes_DeGette = votes_per_candidate.count('Diana DeGette')
-            votes_Raymond = votes_per_candidate.count('Raymon Anthony Doane')
-            #calculating percentages per candidate
-            percent_Charles = votes_Charles/total_votes
-            percent_DeGette = votes_DeGette/total_votes
-            percent_Raymond = votes_Raymond/total_votes
+        votes_Charles = votes_per_candidate.count('Charles Casper Stockham')
+        votes_DeGette = votes_per_candidate.count('Diana DeGette')
+        votes_Raymond = votes_per_candidate.count('Raymon Anthony Doane')
+        #calculating percentages per candidate
+        percent_Charles = votes_Charles/total_votes*100
+        format_Charles = "{:.2f}".format(percent_Charles)
+        percent_DeGette = votes_DeGette/total_votes*100
+        format_DeGette = "{:.2f}".format(percent_DeGette)
+        percent_Raymond = votes_Raymond/total_votes*100
+        format_Raymond = "{:.2f}".format(percent_Raymond)
 
-    print("Election Results", file=f)
-    print("--------------------------------", file=f)
-    print("Total Votes: " , total_votes, file=f)
-    print("--------------------------------", file=f)
-    print("Charles Casper Stockham:",percent_Charles, "% (", votes_Charles,")", file=f)
-    print("Diana DeGette: " ,percent_DeGette, "% (", votes_DeGette,")", file=f)
-    print("Raymon Anthony Doane: " , percent_Raymond, "% (", votes_Raymond,")", file=f)
-    print("--------------------------------", file=f)
-    print("--------------------------------", file=f)
-    #Creating list for results, to pick the highest amount of votes
-    results=[votes_Charles,votes_DeGette,votes_Raymond]
-    winner=max(results)
-    #Creating conditionals to announce winner in a message
-    if votes_Charles>votes_Raymond and votes_Charles>votes_DeGette:
-        print("Winner : Charles Casper Stockham", file=f)
-    if votes_DeGette>votes_Raymond and votes_DeGette>votes_Charles:
-        print("Winner : Diana DeGette", file=f)
-    if votes_Raymond>votes_DeGette and votes_Raymond>votes_Charles:
-        print("Winner : Raymon Anthony Doane", file=f)
+        print("Election Results", file=f)
+        print("--------------------------------", file=f)
+        print("Total Votes: " , total_votes, file=f)
+        print("--------------------------------", file=f)
+        print("Charles Casper Stockham:",format_Charles, "% (", votes_Charles,")", file=f)
+        print("Diana DeGette: " ,format_DeGette, "% (", votes_DeGette,")", file=f)
+        print("Raymon Anthony Doane: " , format_Raymond, "% (", votes_Raymond,")", file=f)
+        print("--------------------------------", file=f)
+        
+        #Creating list for results, to pick the highest amount of votes
+        results=[votes_Charles,votes_DeGette,votes_Raymond]
+        winner=max(results)
+        #Creating conditionals to announce winner in a message
+        if votes_Charles>votes_Raymond and votes_Charles>votes_DeGette:
+            print("Winner : Charles Casper Stockham", file=f)
+        if votes_DeGette>votes_Raymond and votes_DeGette>votes_Charles:
+            print("Winner : Diana DeGette", file=f)
+        if votes_Raymond>votes_DeGette and votes_Raymond>votes_Charles:
+            print("Winner : Raymon Anthony Doane", file=f)
+        print("--------------------------------", file=f)
