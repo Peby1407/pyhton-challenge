@@ -1,5 +1,6 @@
 # pyhton-challenge
-Module OS failed in my Visual Studio Code, so I couldn't place the file path. I was forced to place the csv file in the outer folder PyBank and PyPoll respectively.
-Once we run the code, a txt file is created in the same folder where main.py folder is localed. This was also a consequence of the Module OS malfunction.
-I had a message that said "'os' is not accessed Pylance." And always got a message saying "file not found in location".
-Also my Visual Studio was not able to run the PyPoll python code, I tried reinstalling Visual Studio and using my GitBASH but had no luck. For the PyBank code there was no problem. Nevertheless it should run without any problem.
+Code from both main .py documents will create a new text file in Analysis folder with the output.
+
+There is a dummy text file on each Analysis folder as I couldn't leave the Analysis file empty, otherwise it would dissppear from my repository. It is an empty file.
+
+Thank you
