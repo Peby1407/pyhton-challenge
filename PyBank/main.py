@@ -1,6 +1,5 @@
 # Creating PyBank code
 #importing module os and csv
-#couldn't use module path, had to place csv document in the same folder
 import os
 import csv
 txtpath = os.path.join("PyBank","Analysis","text_file.txt")
@@ -8,7 +7,7 @@ txtpath = os.path.join("PyBank","Analysis","text_file.txt")
 with open(txtpath, "a") as f:
     csvpath = os.path.join("PyBank","Resources","budget_data.csv") 
     #opening file
-    #with open('budget_data.csv', encoding='UTF-8') as csvfile:
+   
     with open(csvpath, encoding='UTF-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         #skipping first row
